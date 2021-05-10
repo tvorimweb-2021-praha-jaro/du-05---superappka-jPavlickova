@@ -24,10 +24,229 @@ body {
 }
 
 .obal {
-    width: 960px; /* obsah stránky je omezený do pruhu širokého 960px */
+    max-width: 960px; /* obsah stránky je omezený do pruhu širokého 960px */
     margin: 0 auto; /* pruh je na stránce vycentrovaný */
     background: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ----- zde začni psát vlastní CSS ----- */
+
+:root {
+    --purple: #48418e;
+    --white: #e5e5e5;
+}
+
+footer {
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    text-align: center;
+}
+
+.box h2 {
+    color: var(--purple);
+    margin: 1rem;
+}
+
+.box p {
+    margin: 1rem;
+}
+
+.intro {
+    background-image: url(images/pozadi.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 1rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.intro img {
+    display: none;
+}
+
+.intro h1 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.button {
+    color: var(--white);
+    font-weight: 400;
+    border-radius: 10px;
+    border: white;
+    border-style: solid;
+    border-width: 2px;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-align: center;
+    transition: background-color 0.75s ease;
+    font-size: 1rem;
+}
+
+.tlacitko1 {
+    background-color: #48418e;
+}
+
+.tlacitko1:hover,
+.tlacitko1:focus {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.267);
+}
+
+.tlacitko2 {
+    margin-top: 1rem;
+}
+
+.tlacitko2:hover,
+.tlacitko2:focus {
+    border-color: #47418e63;
+    background-color: #48418e;
+}
+
+.menu li {
+    list-style: none;
+    margin-right: 0;
+    color: var(--purple);
+    flex-basis: 50%;
+    text-align: center;
+    display: flex;
+}
+
+.nazev {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0;
+}
+
+.menu-odkaz {
+    transition: background-color 0.5s linear;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.menu-odkaz:hover,
+.menu-odkaz:focus {
+    background-color: #48418e;
+    color: white;
+}
+
+@media screen and (min-width:480px) {
+    .button {
+        display: inline;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .intro h1 {
+        font-size: 4rem;
+    }
+
+    .intro p {
+        font-size: 2rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .intro {
+        padding: 2rem;
+    }
+
+    .features {
+        flex-direction: row;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box img {
+        order: -1;
+        align-self: center;
+    }
+
+    .menu li {
+        flex: 1;
+    }
+
+    .icon:hover {
+        animation-name: pulse;
+        transform-origin: center;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes pulse {
+        from {
+            transform: scale(1);
+        }
+
+        25% {
+            transform: scale(0.8);
+        }
+
+        75% {
+            transform: scale(1.2);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+}
+
+@media screen and (min-width:900px) {
+    .intro img {
+        display: unset;
+    }
+
+    .intro {
+        display: flex;
+        padding: 0;
+    }
+
+    .intro-text {
+        padding: 2rem;
+    }
+
+    .intro-foto {
+        display: flex;
+        flex-flow: column-reverse;
+    }
+
+    /* nejde mi nastavit, aby se navigace zobrazovala pouze vpravo, zkoušela jsem nastavit justify-content: flex-start;, ale navigace se stále roztahuje přes celou šířku .obalu */
+}
