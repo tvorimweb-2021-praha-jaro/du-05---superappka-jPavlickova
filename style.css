@@ -198,7 +198,7 @@ a {
         align-self: center;
     }
 
-    .menu li {
+    .menu li { 
         flex: 1;
     }
 
@@ -248,5 +248,13 @@ a {
         flex-flow: column-reverse;
     }
 
-    /* nejde mi nastavit, aby se navigace zobrazovala pouze vpravo, zkoušela jsem nastavit justify-content: flex-start;, ale navigace se stále roztahuje přes celou šířku .obalu */
+    .menu-odkaz {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+
+    .menu li {
+        display: block;
+        flex: 0 1 auto;
+    }
 }
